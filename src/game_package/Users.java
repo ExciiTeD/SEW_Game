@@ -8,7 +8,7 @@ public class Users implements  Runnable {
 
     DataOutputStream out;
     DataInputStream in;
-    Users[] user = new Users[10];
+    Users[] user = new Users[2];
     String name;
     int playerid;
     int playeridin;
@@ -35,7 +35,7 @@ public class Users implements  Runnable {
                 xin = in.readInt();
                 yin = in.readInt();
                 //String message = in.readUTF();
-                for(int i=0; i < 10; i++){
+                for(int i=0; i < user.length; i++){
                     if(user[i]!= null){
                         user[i].out.writeInt(playeridin);
                         user[i].out.writeInt(xin);

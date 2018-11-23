@@ -12,7 +12,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 import java.util.Scanner;
 
-public class Client extends JFrame implements Runnable, KeyListener {
+public class Client extends JPanel implements Runnable, KeyListener {
 
     static Socket socket;
     static DataOutputStream out;
@@ -21,27 +21,21 @@ public class Client extends JFrame implements Runnable, KeyListener {
     static int portNumber = 7777;
 
     int playerid;
-    int[] x = new int[10];
-    int[] y = new int[10];
+    int[] x = new int[2];
+    int[] y = new int[2];
 
     boolean left,right,up,down;
 
     int playerx;
     int playery;
 
-    public static void main(String[] args) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Client frame = new Client();
-                frame.setVisible(true);
-                frame.setResizable(false);
-                frame.init();
-            }
-        });
+    public Client(){
+        addKeyListener(this);
+        //run();
     }
-
+    /*
     public  void init() {
-        setBounds(400,400, 400, 400);
+
         addKeyListener(this);
         try {
             System.out.println("Connecting...");
@@ -60,17 +54,15 @@ public class Client extends JFrame implements Runnable, KeyListener {
             e.printStackTrace();
         }
 
-    }
+    }*/
     public  void updateCoordinates(int pid, int x, int y){
         this.x[pid] = x;
         this.y[pid] = y;
     }
     public void paint(Graphics g){
-        for(int i = 0; i < 10; i++){
-            g.setColor(Color.RED);
-            g.drawOval(x[i], y[i], 5, 5);
-        }
+        g.drawOval(playerx, playery, 5, 5);
     }
+
 
     @Override
     public void run() {
