@@ -1,4 +1,4 @@
-package game_package;
+package server_client;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
