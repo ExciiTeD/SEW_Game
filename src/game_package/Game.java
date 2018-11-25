@@ -1,17 +1,47 @@
 package game_package;
 
+
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
-public class Game extends Canvas implements Runnable{
+public class Game extends JFrame implements Runnable{
 
     private  static final long serialVersionUID = 1L;
-
-    private boolean isRunning = false;
+    private Canvas canvas;
+    private boolean isRunning;
     private Thread thread;
+    private Handler handler;
+    private String title;
+    private Dimension dimension;
 
     public Game(){
-        new ClientWindow(1000, 563, "Dungeon Duels", this);
+        canvas = new Canvas();
+        dimension =  new Dimension(1000, 563);
+        title  = "Dungeon Duels";
+        isRunning = false;
+
+        ////////
+
+        setPreferredSize(this.dimension);
+        setMaximumSize(this.dimension);
+        setMinimumSize(this.dimension);
+
+        add(canvas);
+        setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setVisible(true);
+
+        //new ClientWindow(1000, 563, "Dungeon Duels", this);
+        canvas.createBufferStrategy(3);
+
+        handler = Handler.getInstance();
+        handler.addObject(new Wizard(100, 100, ID.Player));
+        //handler.addObject(new Box(100, 100, ID.Player, handler));
+        //handler.addObject(new Box(200, 100, ID.Player, handler));
+        this.addKeyListener(new KeyInput());
+
         start();
     }
 
@@ -43,9 +73,11 @@ public class Game extends Canvas implements Runnable{
             lastTime = now;
             while (delta >= 1){
                 tick();
+                //System.out.println("tick");
                 delta--;
             }
             render();
+            //System.out.println(frames);
             frames++;
 
             if(System.currentTimeMillis() - timer > 1000){
@@ -57,26 +89,23 @@ public class Game extends Canvas implements Runnable{
     }
 
     private void tick() {
-
+        handler.tick();
     }
 
     private void render(){
-        BufferStrategy bs = this.getBufferStrategy();
-        if(bs == null){
-            this.createBufferStrategy(3);
-            return;
-        }
-        Graphics g = bs.getDrawGraphics();
+       BufferStrategy bufferStrategy = canvas.getBufferStrategy();
+        Graphics g = bufferStrategy.getDrawGraphics();
+        super.paint(g);
         ////////////////////////////////////
-        g.setColor(Color.RED);
-        g.fillRect(0, 00,1000,20);
+        handler.render(g);
         //////////////////////////////////////
-
         g.dispose();
-        bs.show();
+        bufferStrategy.show();
+
+
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         new Game();
-    }
+    }*/
 }
