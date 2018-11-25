@@ -6,8 +6,9 @@ public class Wizard extends PlayerObject {
 
     private  boolean up, down, left, right;
 
+
     public Wizard(int x, int y, ID id){
-        super(x, y, id, 32, 32);
+        super(x, y, id, 32, 32, 5);
         up = false;
         down = false;
         left = false;
@@ -26,16 +27,16 @@ public class Wizard extends PlayerObject {
     }
 
     private void checkMovement() {
-        if(this.isUp())velY = -5;
+        if(this.isUp())velY = -1 * moveSpeed;
         else if(!this.isDown()) velY = 0;
 
-        if(this.isDown())velY = 5;
+        if(this.isDown())velY = moveSpeed;
         else if(!this.isUp()) velY = 0;
 
-        if(this.isRight())velX = 5;
+        if(this.isRight())velX = moveSpeed;
         else if(!this.isLeft()) velX = 0;
 
-        if(this.isLeft())velX = -5;
+        if(this.isLeft())velX = -1 * moveSpeed;
         else if(!this.isRight()) velX = 0;
     }
 

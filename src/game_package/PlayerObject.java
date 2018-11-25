@@ -11,14 +11,15 @@ public abstract class PlayerObject {
     protected Handler handler;
     protected int height;
     protected int width;
+    protected int moveSpeed;
 
 
 
-    public PlayerObject(int x, int y, ID id, int width, int height){
+    public PlayerObject(int x, int y, ID id, int width, int height, int moveSpeed){
         this.x = x;
         this.y = y;
         this.id = id;
-
+        this.moveSpeed = moveSpeed;
         this.width = width;
         this.height = height;
         this.handler = Handler.getInstance();

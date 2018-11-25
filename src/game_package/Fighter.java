@@ -7,7 +7,7 @@ public class Fighter extends PlayerObject {
     private  boolean up, down, left, right;
 
     public Fighter(int x, int y, ID id){
-        super(x, y, id, 32, 48);
+        super(x, y, id, 32, 48, 3);
         up = false;
         down = false;
         left = false;
@@ -22,20 +22,19 @@ public class Fighter extends PlayerObject {
         this.y += velY;
         System.out.println("Y : " + y + "; VelY: " + velY);
 
-
     }
 
     private void checkMovement() {
-        if(this.isUp())velY = -5;
+        if(this.isUp())velY = -1 * moveSpeed;
         else if(!this.isDown()) velY = 0;
 
-        if(this.isDown())velY = 5;
+        if(this.isDown())velY = moveSpeed;
         else if(!this.isUp()) velY = 0;
 
-        if(this.isRight())velX = 5;
+        if(this.isRight())velX = moveSpeed;
         else if(!this.isLeft()) velX = 0;
 
-        if(this.isLeft())velX = -5;
+        if(this.isLeft())velX = -1 * moveSpeed;
         else if(!this.isRight()) velX = 0;
     }
 
