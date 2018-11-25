@@ -6,24 +6,33 @@ import java.util.LinkedList;
 public class Handler {
     private static Handler ourInstance = new Handler();
     LinkedList<GameObject> gameObjects = new LinkedList<GameObject>();
-    private  boolean up, down, left, right;
+
+    LinkedList <PlayerObject> playerObjects = new LinkedList<PlayerObject>();
+
+    private int maxPlaySize = 4;
 
     public static Handler getInstance() {
         return ourInstance;
     }
 
     private Handler() {
-        up = false;
-        down = false;
-        left = false;
-        right = false;
     }
 
-
+    public void connect(PlayerObject playerObject){
+        if(playerObjects.size() < maxPlaySize -1){
+            playerObjects.add(playerObject);
+        }
+        else {
+            System.out.println("Zu viele  Spieler");
+        }
+    }
 
     public void tick(){
         for (GameObject gameObject: gameObjects) {
             gameObject.tick();
+        }
+        for (PlayerObject playerObject: playerObjects){
+            playerObject.tick();
         }
     }
 
@@ -31,45 +40,17 @@ public class Handler {
         for (GameObject gameObject: gameObjects) {
             gameObject.render(g);
         }
+        for (PlayerObject playerObject: playerObjects){
+            playerObject.render(g);
+        }
     }
 
-    public void addObject(GameObject gameObject){
+    public void addGameObject(GameObject gameObject){
         this.gameObjects.add(gameObject);
     }
 
-    public void removeObject(GameObject gameObject){
+    public void removeGameObject(GameObject gameObject){
         this.gameObjects.remove(gameObject);
     }
 
-    public boolean isUp() {
-        return up;
-    }
-
-    public void setUp(boolean up) {
-        this.up = up;
-    }
-
-    public boolean isDown() {
-        return down;
-    }
-
-    public void setDown(boolean down) {
-        this.down = down;
-    }
-
-    public boolean isLeft() {
-        return left;
-    }
-
-    public void setLeft(boolean left) {
-        this.left = left;
-    }
-
-    public boolean isRight() {
-        return right;
-    }
-
-    public void setRight(boolean right) {
-        this.right = right;
-    }
 }

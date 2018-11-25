@@ -2,10 +2,16 @@ package game_package;
 
 import java.awt.*;
 
-public class Wizard extends GameObject {
+public class Wizard extends PlayerObject {
+
+    private  boolean up, down, left, right;
 
     public Wizard(int x, int y, ID id){
-        super(x, y, id);
+        super(x, y, id, 32, 32);
+        up = false;
+        down = false;
+        left = false;
+        right = false;
     }
     @Override
     public void tick() {
@@ -20,27 +26,60 @@ public class Wizard extends GameObject {
     }
 
     private void checkMovement() {
-        if(this.handler.isUp())velY = -5;
-        else if(!handler.isDown()) velY = 0;
+        if(this.isUp())velY = -5;
+        else if(!this.isDown()) velY = 0;
 
-        if(this.handler.isDown())velY = 5;
-        else if(!handler.isUp()) velY = 0;
+        if(this.isDown())velY = 5;
+        else if(!this.isUp()) velY = 0;
 
-        if(this.handler.isRight())velX = 5;
-        else if(!handler.isLeft()) velX = 0;
+        if(this.isRight())velX = 5;
+        else if(!this.isLeft()) velX = 0;
 
-        if(this.handler.isLeft())velX = -5;
-        else if(!handler.isRight()) velX = 0;
+        if(this.isLeft())velX = -5;
+        else if(!this.isRight()) velX = 0;
     }
 
     @Override
     public void render(Graphics g) {
         g.setColor(Color.yellow);
-        g.fillRect(this.x,this.y, 32,32);
+        g.fillRect(this.x,this.y,this.width,this.height);
     }
+
+    public boolean isUp() {
+        return up;
+    }
+
+    public void setUp(boolean up) {
+        this.up = up;
+    }
+
+    public boolean isDown() {
+        return down;
+    }
+
+    public void setDown(boolean down) {
+        this.down = down;
+    }
+
+    public boolean isLeft() {
+        return left;
+    }
+
+    public void setLeft(boolean left) {
+        this.left = left;
+    }
+
+    public boolean isRight() {
+        return right;
+    }
+
+    public void setRight(boolean right) {
+        this.right = right;
+    }
+
 
     @Override
     public Rectangle getBounds() {
-        return new Rectangle(x, y, 32, 32);
+        return new Rectangle(x, y, this.width, this.height);
     }
 }

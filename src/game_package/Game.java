@@ -14,6 +14,7 @@ public class Game extends JFrame implements Runnable{
     private Handler handler;
     private String title;
     private Dimension dimension;
+    private RenderHandler renderHandler;
 
     public Game(){
         canvas = new Canvas();
@@ -21,26 +22,33 @@ public class Game extends JFrame implements Runnable{
         title  = "Dungeon Duels";
         isRunning = false;
 
-        ////////
 
+        //Setting up the window
         setPreferredSize(this.dimension);
         setMaximumSize(this.dimension);
         setMinimumSize(this.dimension);
-
-        add(canvas);
         setResizable(false);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         setLocationRelativeTo(null);
+
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         setVisible(true);
 
-        //new ClientWindow(1000, 563, "Dungeon Duels", this);
+        //Canvas related things
+        add(canvas);
         canvas.createBufferStrategy(3);
 
         handler = Handler.getInstance();
-        handler.addObject(new Wizard(100, 100, ID.Player));
-        //handler.addObject(new Box(100, 100, ID.Player, handler));
-        //handler.addObject(new Box(200, 100, ID.Player, handler));
-        this.addKeyListener(new KeyInput());
+        handler.connect(new Wizard(100, 100, ID.Player));
+
+        this.addKeyListener(new KeyInput(handler.playerObjects.get(0)));
+
+        handler.connect(new Fighter(200, 200, ID.Player));
+        this.addKeyListener(new KeyInput(handler.playerObjects.get(1)));
+
+
+        renderHandler = new RenderHandler(getWidth(), getHeight());
 
         start();
     }
@@ -73,7 +81,6 @@ public class Game extends JFrame implements Runnable{
             lastTime = now;
             while (delta >= 1){
                 tick();
-                //System.out.println("tick");
                 delta--;
             }
             render();
@@ -94,18 +101,18 @@ public class Game extends JFrame implements Runnable{
 
     private void render(){
        BufferStrategy bufferStrategy = canvas.getBufferStrategy();
-        Graphics g = bufferStrategy.getDrawGraphics();
-        super.paint(g);
+        Graphics graphics = bufferStrategy.getDrawGraphics();
+        super.paint(graphics);
         ////////////////////////////////////
-        handler.render(g);
+        renderHandler.render(graphics);
         //////////////////////////////////////
-        g.dispose();
+        graphics.dispose();
         bufferStrategy.show();
 
 
     }
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         new Game();
-    }*/
+    }
 }
