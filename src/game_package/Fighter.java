@@ -22,6 +22,8 @@ public class Fighter extends PlayerObject {
         this.y += velY;
         System.out.println("Y : " + y + "; VelY: " + velY);
 
+        collisionDetection();
+
     }
 
     private void checkMovement() {
@@ -38,6 +40,20 @@ public class Fighter extends PlayerObject {
         else if(!this.isRight()) velX = 0;
     }
 
+    private void collisionDetection() {
+        for(GameObject gameObject: handler.gameObjects){
+            if(gameObject.getBounds().intersects(this.getBounds())){
+                this.x += this.velX * -1;
+                this.y += this.velY * -1;
+            }
+        }
+        for(PlayerObject playerObject: handler.playerObjects){
+            if(playerObject.getBounds().intersects(this.getBounds()) && playerObject != this){
+                this.x += this.velX * -1;
+                this.y += this.velY * -1;
+            }
+        }
+    }
     @Override
     public void render(Graphics g) {
         g.setColor(Color.RED);
