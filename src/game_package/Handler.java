@@ -43,6 +43,7 @@ public class Handler {
         }
         for (PlayerObject playerObject: playerObjects){
             playerObject.render(g);
+            //S
         }
     }
 
