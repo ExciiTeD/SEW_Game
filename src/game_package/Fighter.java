@@ -41,12 +41,12 @@ public class Fighter extends PlayerObject {
     }
 
     private void collisionDetection() {
-        for(GameObject gameObject: handler.gameObjects){
+        /*for(GameObject gameObject: handler.gameObjects){
             if(gameObject.getBounds().intersects(this.getBounds())){
                 this.x += this.velX * -1;
                 this.y += this.velY * -1;
             }
-        }
+        }*/
         for(PlayerObject playerObject: handler.playerObjects){
             if(playerObject.getBounds().intersects(this.getBounds()) && playerObject != this){
                 this.x += this.velX * -1;

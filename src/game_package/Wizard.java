@@ -18,13 +18,14 @@ public class Wizard extends PlayerObject {
     public void tick() {
         checkMovement();
 
+
         this.x += velX;
         System.out.println("X : " + x + "; VelX: " + velX);
         this.y += velY;
         System.out.println("Y : " + y + "; VelY: " + velY);
 
-        collisionDetection();
 
+        collisionDetection();
 
     }
 
@@ -43,12 +44,12 @@ public class Wizard extends PlayerObject {
     }
 
     private void collisionDetection() {
-        for(GameObject gameObject: handler.gameObjects){
+        /*for(GameObject gameObject: handler.gameObjects){
             if(gameObject.getBounds().intersects(this.getBounds())){
                 this.x += this.velX * -1;
                 this.y += this.velY * -1;
             }
-        }
+        }*/
         for(PlayerObject playerObject: handler.playerObjects){
             if(playerObject.getBounds().intersects(this.getBounds()) && playerObject != this){
                 this.x += this.velX * -1;

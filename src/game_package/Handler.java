@@ -39,6 +39,7 @@ public class Handler {
     public void render(Graphics g){
         for (GameObject gameObject: gameObjects) {
             gameObject.render(g);
+            System.out.println(gameObject.getX());
         }
         for (PlayerObject playerObject: playerObjects){
             playerObject.render(g);
