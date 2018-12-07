@@ -2,7 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ae8acb4-d6dc-45f9-a655-9ca717a58bb0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/game_package/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_package/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEW_Game/META-INF/SEW_Game.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEW_Game/game_package/Handler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SEW_Game/game_package/Handler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEW_Game/game_package/Handler_OLD.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEW_Game/server_client/Client.class~Stashed changes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEW_Game/server_client/Client.class~Updated upstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEW_Game/server_client/Input.class~Stashed changes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEW_Game/server_client/Input.class~Updated upstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEW_Game/server_client/Server.class~Stashed changes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEW_Game/server_client/Server.class~Updated upstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEW_Game/server_client/Users.class~Stashed changes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SEW_Game/server_client/Users.class~Updated upstream" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game_package/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game_package/Game.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/game_package/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+            <state relative-caret-position="293">
+              <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -75,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/game_package/Handler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+            <state relative-caret-position="344">
+              <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
             </state>
           </provider>
         </entry>
@@ -141,6 +154,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Nico" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -151,11 +169,11 @@
         <option value="$PROJECT_DIR$/src/game_package/Box.java" />
         <option value="$PROJECT_DIR$/src/game_package/GameObject.java" />
         <option value="$PROJECT_DIR$/src/game_package/KeyInput.java" />
-        <option value="$PROJECT_DIR$/src/game_package/Game.java" />
         <option value="$PROJECT_DIR$/src/game_package/PlayerObject.java" />
         <option value="$PROJECT_DIR$/src/game_package/Wizard.java" />
         <option value="$PROJECT_DIR$/src/game_package/Fighter.java" />
         <option value="$PROJECT_DIR$/src/game_package/Handler.java" />
+        <option value="$PROJECT_DIR$/src/game_package/Game.java" />
       </list>
     </option>
   </component>
@@ -171,6 +189,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,11 +217,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544001704598" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544169718878" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -271,10 +289,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="916" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20242915" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20501286" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -284,12 +301,12 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3285968" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32822478" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32950193" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
@@ -334,6 +351,10 @@
       <window_info anchor="right" id="Maven" order="8" />
     </layout-to-restore>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Bitte geh" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bitte geh" />
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/game_package/ClientWindow.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -349,13 +370,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/game_package/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="52" column="16" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -437,8 +451,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/game_package/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+        <state relative-caret-position="344">
+          <caret line="37" lean-forward="true" selection-start-line="37" selection-end-line="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/game_package/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
         </state>
       </provider>
     </entry>

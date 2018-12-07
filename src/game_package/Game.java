@@ -21,7 +21,7 @@ public class Game extends JFrame implements Runnable{
         dimension =  new Dimension(1000, 563);
         title  = "Dungeon Duels";
         isRunning = false;
-
+        //KOMMENTAR FÜR GIT
 
         //Setting up the window
         setPreferredSize(this.dimension);
